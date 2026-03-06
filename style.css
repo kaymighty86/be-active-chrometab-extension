@@ -1,0 +1,460 @@
+@font-face {
+    font-family: "Poiret One";
+    src: url('./assets/fonts/Poiret_One.ttf');
+}
+
+@font-face {
+    font-family: "TASA Orbiter";
+    src: url('./assets/fonts/TASA_Orbiter.ttf');
+}
+
+:root{
+    --anim_delay_0: 0.15s;
+    --anim_delay_1: 0.3s;
+    --anim_delay_2: 0.5s;
+    --anim_delay_3: 0.8s;
+    --anim_delay_4: 1.3s;
+
+    --accent1: #214253;
+    --accent2: #246180;
+}
+
+::-webkit-scrollbar{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #d0d2da;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #818286;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #484a4e;
+    border-radius: 4px;
+}
+
+body{
+    margin: 0px;
+    font-family: "TASA Orbiter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #2b2c2f;
+}
+
+p{
+    margin: 0px;
+}
+
+input{
+    display: inline-block;
+    padding: 0.4rem;
+    font-family: "TASA Orbiter", sans-serif;
+    border: none;
+    background-color: #d1d6d8;
+    border-radius: 0.7rem;
+    box-sizing: border-box;
+}
+
+input:focus{
+    outline: 2px solid var(--accent1);
+    background-color: white;
+}
+
+button{
+    font-size: 2rem;
+    padding: 0.2rem 1rem;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: var(--accent1);
+    color: white;
+    transition: border-radius 0.2s ease-out, padding 0.2s ease-out;
+}
+
+button:hover{
+    background-color: var(--accent2);
+    padding: 0.2rem 1.2rem;
+    border-radius: 0.5rem;
+}
+
+button:active{
+    transform: scale(0.9,0.9);
+}
+
+/* WALLPAPER LAYER */
+#wallpaper_section{
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.wallpaper{
+    width: 100%;
+    height: 100%;
+    object-position: bottom;
+    object-fit: cover;
+    animation: wallpaper_anim 1s ease-in-out 1 forwards;
+}
+
+@keyframes wallpaper_anim {
+    0%{
+        transform: scale(1,1);
+    }
+
+    100%{
+        transform: scale(1.1,1.1);
+    }
+}
+
+#black_cover{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24, 25, 31, 0.23);
+    mix-blend-mode:multiply;
+}
+
+/* COMMON ANIMATIONS */
+@keyframes fade_in_anim{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes slide_up_anim{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slide_left_anim{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide_right_anim{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+/* CONTENT LAYER */
+#content_section{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    overflow-x: hidden;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center; */
+}
+
+/* #content_section>section{
+    display: inline-block;
+} */
+
+.partition{
+    display: inline-block;
+    position: relative;
+}
+
+.partition.left{
+    width: 30%;
+}
+.partition.middle{
+    width: 40%;
+    margin-left: -5px;
+    vertical-align: top;
+}
+.partition.right{
+    width: 30%;
+    margin-left: -5px;
+    vertical-align: top;
+}
+
+
+/* DATE-TIME */
+.middle{
+    height: 100vh;
+}
+
+#date_time{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    text-align: center;
+    color: white;
+    transform: translateX(-50%);
+}
+
+#date_time p{
+    text-shadow: 0px 0.12rem 0.2rem rgba(53, 57, 66, 0.45);
+}
+
+#date{
+    font-size: 1.6rem;
+    font-weight: 500;
+    opacity: 0;
+    animation: fade_in_anim 0.3s ease-in var(--anim_delay_1) 1 forwards;
+    animation-delay: var(--anim_delay_0);
+}
+
+#time{
+    font-size: 12rem;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: 0.7rem;
+    opacity: 0;
+    animation: fade_in_anim 0.3s ease-in var(--anim_delay_1) 1 forwards;
+    animation-delay: var(--anim_delay_0);
+}
+
+.first_message,.other_messages{
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.first_message{
+    opacity: 0;
+    animation: fade_in_anim 0.3s ease-out 1 forwards, slide_up_anim 0.3s ease-out 1 forwards;
+    animation-delay: var(--anim_delay_4);
+}
+
+.other_messages{
+    opacity: 0;
+    animation: fade_in_anim 0.3s ease-out 1 forwards, slide_up_anim 0.3s ease-out 1 forwards;
+}
+
+
+/* ---------------- RIGHT SECTION ---------------- */
+.partition.right{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+    height: 100dvh;
+}
+
+.quick_nav{
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    margin: 1rem;
+    opacity: 0;
+    transition: width 0.2s ease-out, border-radius 0.2s ease-out;
+    animation: fade_in_anim 0.3s ease-out 1 forwards, slide_left_anim 0.3s ease-out 1 forwards;
+}
+
+.slower-1{
+    animation-delay: 1s;
+}
+
+.slower-2{
+    animation-delay: 1.2s;
+}
+
+.slower-3{
+    animation-delay: 1.4s;
+}
+
+.quick_nav img{
+    width: 1.5rem;
+    transform: translateY(50%);
+}
+
+.quick_nav:hover{
+    width: 3.7rem;
+    border-radius: 20%;
+    outline: 2px solid var(--accent1);
+}
+
+/* ---------------- LEFT SECTION ---------------- */
+.partition.left{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+    height: 100dvh;
+}
+
+#daily_task{
+    margin-left: 1rem;
+    width: 4rem;
+    height: 30rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0px 0.12rem 0.3rem rgba(53, 57, 66, 0.45);
+    padding: 1.6rem 1.2rem;
+    box-sizing: border-box;
+    transition: width var(--anim_delay_1) ease-out;
+    opacity: 0;
+    animation: fade_in_anim 0.3s ease-out 1 forwards, slide_right_anim 0.3s ease-out 1 forwards;
+    animation-delay: var(--anim_delay_3);
+}
+
+#daily_task:hover{
+    width: 70%;
+    max-width: 22rem;
+}
+
+/*---------------------------------*/
+#tasks_summary{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: stretch; */
+    opacity: 0;
+    animation: fade_in_anim 0.5s ease-out var(--anim_delay_1) 1 forwards;
+}
+
+#tasks_summary img{
+    width: 3rem;
+}
+
+#tasks_summary_list{
+    padding: 0px;
+    list-style-type: none;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 600;
+    font-size: large;
+    overflow: hidden;
+}
+
+#tasks_summary li{
+    margin: 0.5rem 0px;
+}
+
+/*---------------------------------*/
+#inner_content{
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    opacity: 0;
+    animation: fade_in_anim 0.5s ease-out var(--anim_delay_1) 1 forwards;
+}
+
+#inner_content_header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#inner_content_header img{
+    width: 3rem;
+}
+
+#inner_content_header>h3{
+    font-size: large;
+    margin: 0px;
+}
+
+#inner_content>h4{
+    font-family: "Poiret One", sans-serif;
+    font-size: medium;
+    margin: 0px;
+    margin-top: 0.5rem;
+    margin-bottom: 1.4rem;
+}
+
+#task_input_form{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 1rem;
+}
+
+#task_input{
+    width: 100%;
+}
+
+#task_submit_btn{
+    margin-left: 0.2rem;
+}
+
+
+#tasks{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    overflow: auto;
+}
+
+.task_item{
+    margin: 0.5rem 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: fade_in_anim 0.3s ease-out 1 forwards, slide_up_anim 0.3s ease-out 1 forwards;
+    cursor: default;
+}
+
+.done{
+    text-decoration: line-through;
+    animation: task_done 0.2s linear 1 forwards;
+}
+
+@keyframes task_done {
+    0%{
+        transform: scale(1, 1);
+    }
+    50%{
+        transform: scale(0.9, 0.9);
+    }
+    100%{
+        transform: scale(1, 1);
+    }
+}
+
+.task_item:hover{
+    /* text-decoration: line-through; */
+    font-weight: bold;
+}
+
+.task_item h4{
+    margin: 0px;
+    margin-right: 0.5rem;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+.task_item p{
+    font-size: small;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <script src="./app.js" type="text/Javascript" defer></script>
+    <script src="./tasksTracker.js" type="text/Javascript" defer></script>
+    <title>New Tab</title>
+</head>
+<body>
+    <section id="wallpaper_section">
+        <span id="wallpaper" class="wallpaper"></span>
+        <div id="black_cover"></div>
+    </section>
+    <section id="content_section">
+        <section class="partition left">
+            <div id="daily_task">
+                <div id="tasks_summary">
+                    <img src="./assets/images/icons/checklist.svg" alt="tasks"/>
+                    <ul id="tasks_summary_list">
+                    </ul>
+                </div>
+                <div id="inner_content">
+                    <div id="inner_content_header">
+                        <img src="./assets/images/icons/checklist.svg" alt="tasks"/>
+                        <h3>What would you like to achieve today?</h3>
+                    </div>
+                    <h4>Tasks reset everyday 😛 No procrastination 😒</h4>
+                    <form id="task_input_form">
+                        <input id="task_input" type="text" name = "task" maxlength="60" placeholder="I will..." required/>
+                        <button type="submit" id="task_submit_btn">+</button>
+                    </form>
+                    <ul id="tasks">
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="partition middle">
+            <div id="date_time">
+                <p id="date">22 Feb 2026</p>
+                <p id="time">01:36</p>
+                <div id="message_body">
+                    <p class="first_message">Hello Kay! 😃</p>
+                </div>
+            </div>
+        </section>
+        <section class="partition right">
+            <a class="quick_nav slower-1">
+                <span><img src="./assets/images/logos/search.png"/></span>
+            </a>
+            <a href="https://github.com/kaymighty86" class="quick_nav slower-2">
+                <span><img src="./assets/images/logos/github.png"/></span>
+            </a>
+            <a href="https://mail.google.com/mail/" class="quick_nav slower-3">
+                <span><img src="./assets/images/logos/gmail.png"/></span>
+            </a>
+            <a href="https://youtube.com/" class="quick_nav slower-1">
+                <span><img src="./assets/images/logos/youtube.png"/></span>
+            </a>
+            <a href="https://kayswebs.ng/" class="quick_nav slower-2">
+                <span><img src="./assets/images/logos/my personal website logo.png"/></span>
+            </a>
+        </section>
+    </section>
+</body>
+</html>

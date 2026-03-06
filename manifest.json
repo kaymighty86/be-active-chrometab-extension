@@ -1,0 +1,14 @@
+{
+  "name": "Be Active!",
+  "version": "0.1.0",
+  "description": "Assists you with tab customisation that may help you be more productive.",
+  "icons": {
+    "32": "assets/images/ext/be-active-ext-icon.png",
+    "48": "assets/images/ext/be-active-ext-icon.png",
+    "128": "assets/images/ext/be-active-ext-icon.png"
+  },
+  "chrome_url_overrides":{
+    "newtab": "index.html"
+  },
+  "manifest_version": 3
+}
