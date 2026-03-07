@@ -64,6 +64,7 @@ function mountTask(id, task){
     task_num.innerText = number_2_text(id + 1);
     const task_description = document.createElement("p");
     task_description.innerText = task.details;
+    task_description.title = "Click to mark as done"
 
     task_item.appendChild(task_num); //mount data into the task item
     task_item.appendChild(task_description); //mount data into the task item
