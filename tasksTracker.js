@@ -23,6 +23,10 @@ function resetTasks(){
     localStorage.removeItem("all_tasks"); //delete the stored data
 }
 
+function updateTasksDate(){
+    localStorage.setItem("tasks_date", `${today.getDate()}-${today.getMonth()}-${today.getFullYear()}`)
+}
+
 let storedDate_str = localStorage.getItem("tasks_date");
 const today = new Date();
 if(storedDate_str != undefined){ //if this not a first time user
@@ -30,10 +34,11 @@ if(storedDate_str != undefined){ //if this not a first time user
 
     if(today_str != storedDate_str){ //if its a new day, reset the tasks
         resetTasks();
+        updateTasksDate();
     }
 }
 else{ //store today's date for the new user
-    localStorage.setItem("tasks_date", `${today.getDate()}-${today.getMonth()}-${today.getFullYear()}`)
+    updateTasksDate();
 }
 
 //FOR MOUNTING TASK TO DOM
