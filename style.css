@@ -244,13 +244,13 @@ button:active{
     /* animation-delay: var(--anim_delay_3); */
 }
 
-#searchbar_parent>img{ /*for the google icon*/
+.active_icon{/*for the google icon*/
+    margin-right: 0.6rem;
     width: 2rem;
     height: 2rem;
-    margin-right: 0.6rem;
+    padding: 0.3rem;
     background-color: white;
     border-radius: 50%;
-    padding: 0.3rem;
 }
 
 #searchbar_parent form{
@@ -263,6 +263,7 @@ button:active{
 #searchbar_parent input{
     width: 100%;
     /* outline: 2px solid white; */
+    box-shadow: 0px 5px 1rem #00000098;
 }
 
 #searchbar_parent button{
