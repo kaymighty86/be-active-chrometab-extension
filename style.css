@@ -127,7 +127,7 @@ button:active{
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: rgba(24, 25, 31, 0.23);
+    background-color: rgba(24, 25, 31, 0.27);
     mix-blend-mode:multiply;
 }
 
@@ -244,13 +244,34 @@ button:active{
     /* animation-delay: var(--anim_delay_3); */
 }
 
-.active_icon{/*for the google icon*/
+.active_icon a{/*for the google icon*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin-right: 0.6rem;
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     padding: 0.3rem;
     background-color: white;
     border-radius: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    transition: width 0.2s ease-out, border-radius 0.2s ease-out;
+}
+
+.active_icon img{
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.active_icon a:hover{
+    width: 3.7rem;
+    border-radius: 0.7rem;
+}
+
+.active_icon a:active{
+    transform: scale(0.9,0.9);
 }
 
 #searchbar_parent form{
@@ -263,7 +284,7 @@ button:active{
 #searchbar_parent input{
     width: 100%;
     /* outline: 2px solid white; */
-    box-shadow: 0px 5px 1rem #00000098;
+    box-shadow: 0px 5px 0.5rem #00000048;
 }
 
 #searchbar_parent button{
