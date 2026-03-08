@@ -9,24 +9,30 @@ function number_2_text(number){ //this just checks the number and attaches a '0'
 }
 
 //DATE-TIME CHANGE LOGIC --------------------
+previousMinute = 0;
+
 //update the time on load
-function updateDateTime(){
-    const currentDate = new Date();
+function updateDateTime(currentDate = new Date()){
     const date = currentDate.getDate();
     const month = currentDate.toLocaleString("en-US", { month: "short" });
     const year = currentDate.getFullYear();
     const hour = currentDate.getHours();
     const minutes = currentDate.getMinutes();
+    previousMinute = minutes;
 
     date_element.innerHTML = `${number_2_text(date)} ${month}, ${year}`;
     time_element.innerHTML = `${number_2_text(hour)}:${number_2_text(minutes)}`;
 }
 updateDateTime();
 
-//update the time every second
+//update the time every minute
 setInterval(()=>{
-    updateDateTime()
-}, 1000)
+    currentDate = new Date();
+    currentMinute = currentDate.getMinutes();
+    if(currentMinute != previousMinute){//check if the minutes has changed
+        updateDateTime(currentDate);//update rendered date-time
+    }
+}, 100)
 
 //MESSAGE CHANGE LOGIC --------------------
 async function getMessages(){
