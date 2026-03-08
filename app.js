@@ -2,6 +2,7 @@ const time_element = document.getElementById("time");
 const date_element = document.getElementById("date");
 const message_body = document.getElementById("message_body");
 const wallpaper_section = document.getElementById("wallpaper_section");
+const search_form = document.getElementById("search_form");
 
 function number_2_text(number){ //this just checks the number and attaches a '0' before it if its less than 10
     return `${number < 10? '0': ''}${number}`;
@@ -86,3 +87,10 @@ async function changeWallpaper(){
     // }
 }
 changeWallpaper();
+
+//SEARCH LOGIC --------------------
+function handleSearch(event){
+    event.preventDefault();
+}
+
+search_form.addEventListener("submit",handleSearch)
