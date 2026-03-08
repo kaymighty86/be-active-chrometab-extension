@@ -15,7 +15,7 @@
     </section>
     <section id="content_section">
         <section class="partition left">
-            <div id="daily_task">
+            <div id="daily_task" class="card">
                 <div id="tasks_summary">
                     <img src="./assets/images/icons/checklist.svg" alt="tasks"/>
                     <ul id="tasks_summary_list">
@@ -37,6 +37,15 @@
             </div>
         </section>
         <section class="partition middle">
+            <div id="searchbar_container">
+                <div id="searchbar_parent">
+                    <img src="./assets/images/logos/search.png"/>
+                    <form>
+                        <input name="search_text" type="text" placeholder="Search anything" title="Search any topic on Google"/>
+                        <button type="submit" title="Go"><img src="./assets/images/icons/search_icon_white.svg" width="20px"/></button>
+                    </form>
+                </div>
+            </div>
             <div id="date_time">
                 <p id="date">22 Feb 2026</p>
                 <p id="time">01:36</p>
@@ -46,9 +55,9 @@
             </div>
         </section>
         <section class="partition right">
-            <a class="quick_nav slower-1">
+            <!-- <a class="quick_nav slower-1">
                 <span><img src="./assets/images/logos/search.png"/></span>
-            </a>
+            </a> -->
             <a href="https://github.com/kaymighty86" class="quick_nav slower-2">
                 <span><img src="./assets/images/logos/github.png"/></span>
             </a>

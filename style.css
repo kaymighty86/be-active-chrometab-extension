@@ -54,6 +54,7 @@ input{
     display: inline-block;
     padding: 0.4rem;
     font-family: "TASA Orbiter", sans-serif;
+    font-size: medium;
     border: none;
     background-color: #d1d6d8;
     border-radius: 0.7rem;
@@ -84,6 +85,14 @@ button:hover{
 
 button:active{
     transform: scale(0.9,0.9);
+}
+
+.card{
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0px 0.12rem 0.3rem rgba(53, 57, 66, 0.45);
+    padding: 1.2rem 1.2rem;
+    box-sizing: border-box;
 }
 
 /* WALLPAPER LAYER */
@@ -200,6 +209,68 @@ button:active{
     height: 100vh;
 }
 
+#searchbar_container{
+    width: 100%;
+    max-width: 34rem;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: searchbar_unravel 0.6s ease-out 1 forwards;
+    animation-delay: var(--anim_delay_2);
+}
+
+@keyframes searchbar_unravel {
+    0%{
+        opacity: 0;
+        width: 4rem;
+    }
+
+    100%{
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+#searchbar_parent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* opacity: 0; */
+    /* animation: fade_in_anim 0.6s ease-out 1 forwards; */
+    /* animation-delay: var(--anim_delay_3); */
+}
+
+#searchbar_parent>img{ /*for the google icon*/
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.6rem;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.3rem;
+}
+
+#searchbar_parent form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#searchbar_parent input{
+    width: 100%;
+    /* outline: 2px solid white; */
+}
+
+#searchbar_parent button{
+    margin-left: 0.4rem;
+    outline: 2px solid white;
+}
+
+/*---------------------------------*/
 #date_time{
     position: absolute;
     top: 45%;
@@ -217,7 +288,7 @@ button:active{
     font-size: 1.6rem;
     font-weight: 500;
     opacity: 0;
-    animation: fade_in_anim 0.3s ease-in var(--anim_delay_1) 1 forwards;
+    animation: fade_in_anim 0.3s ease-in 0s 1 forwards;
     animation-delay: var(--anim_delay_0);
 }
 
@@ -314,11 +385,7 @@ button:active{
     margin-left: 1rem;
     width: 4rem;
     height: 30rem;
-    background-color: white;
-    border-radius: 2rem;
-    box-shadow: 0px 0.12rem 0.3rem rgba(53, 57, 66, 0.45);
-    padding: 1.6rem 1.2rem;
-    box-sizing: border-box;
+    
     transition: width var(--anim_delay_1) ease-out;
     opacity: 0;
     animation: fade_in_anim 0.3s ease-out 1 forwards, slide_right_anim 0.3s ease-out 1 forwards;
