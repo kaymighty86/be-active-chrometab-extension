@@ -17,6 +17,8 @@
 
     --accent1: #214253;
     --accent2: #246180;
+
+    --border-radius: 2rem;
 }
 
 ::-webkit-scrollbar{
@@ -56,7 +58,8 @@ input{
     font-family: "TASA Orbiter", sans-serif;
     font-size: medium;
     border: none;
-    background-color: #d1d6d8;
+    background-color: #dfe3e4;
+    outline: 1px solid #c1c8ca;
     border-radius: 0.7rem;
     box-sizing: border-box;
 }
@@ -89,10 +92,44 @@ button:active{
 
 .card{
     background-color: white;
-    border-radius: 2rem;
+    border-radius: var(--border-radius);
     box-shadow: 0px 0.12rem 0.3rem rgba(53, 57, 66, 0.45);
     padding: 1.2rem 1.2rem;
     box-sizing: border-box;
+}
+
+.link_icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    /* padding: 0.4rem; */
+    height: 3rem;
+    cursor: pointer;
+    /* text-align: center; */
+    background-color: white;
+    border-radius: 50%;
+    margin: 1rem;
+    transition: width 0.2s ease-out, border-radius 0.2s ease-out;
+}
+
+.link_icon img{
+    width: 100%;
+    max-width: 1.5rem;
+    height: auto;
+    /* transform: translateY(50%); */
+}
+
+.link_icon:hover{
+    width: 3.7rem;
+    /* padding: 0.4rem 1rem; */
+    border-radius: 20%;
+    outline: 2px solid var(--accent1);
+}
+
+.link_icon:active{
+    background-color: #d0d2da;
 }
 
 /* WALLPAPER LAYER */
@@ -190,15 +227,15 @@ button:active{
 }
 
 .partition.left{
-    width: 30%;
+    width: 20%;
 }
 .partition.middle{
-    width: 40%;
+    width: 60%;
     margin-left: -5px;
     vertical-align: top;
 }
 .partition.right{
-    width: 30%;
+    width: 20%;
     margin-left: -5px;
     vertical-align: top;
 }
@@ -210,15 +247,19 @@ button:active{
 }
 
 #searchbar_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    max-width: 34rem;
-    padding: 0.4rem 0.8rem;
+    max-width: 37rem;
+    /* padding: 0.4rem 0.8rem; */
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    animation: searchbar_unravel 0.6s ease-out 1 forwards;
+    animation: searchbar_unravel 0.8s ease-out 1 forwards;
     animation-delay: var(--anim_delay_2);
 }
 
@@ -234,18 +275,15 @@ button:active{
     }
 }
 
-#searchbar_parent{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* opacity: 0; */
-    /* animation: fade_in_anim 0.6s ease-out 1 forwards; */
-    /* animation-delay: var(--anim_delay_3); */
+#searchbar_container .link_icon{
+    margin: 0px;
+    margin-right: 0.6rem;
+    min-width: 3rem;
+    min-height: 3rem;
 }
 
-.active_icon a{/*for the google icon*/
-    display: flex;
+/* .active_icon a{for the google icon */
+    /* display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -272,34 +310,47 @@ button:active{
 
 .active_icon a:active{
     transform: scale(0.9,0.9);
-}
+} */
 
-#searchbar_parent form{
+#search_form{
     width: 100%;
+    height: 3rem;
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    /* justify-content: center; */
 }
 
-#searchbar_parent input{
+#search_form input{
     width: 100%;
     /* outline: 2px solid white; */
     box-shadow: 0px 5px 0.5rem #00000048;
 }
 
-#searchbar_parent button{
+#search_form button{
     margin-left: 0.4rem;
     outline: 2px solid white;
 }
 
 /*---------------------------------*/
 #date_time{
+    width: 100%;
+    max-width: 37rem;
     position: absolute;
     top: 45%;
     left: 50%;
     text-align: center;
     color: white;
     transform: translateX(-50%);
+    padding: 2rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #ffffff31;
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    opacity: 0;
+    animation: fade_in_anim 0.3s ease-in 0s 1 forwards;
+    animation-delay: var(--anim_delay_0);
 }
 
 #date_time p{
@@ -307,28 +358,23 @@ button:active{
 }
 
 #date{
-    font-size: 1.6rem;
+    font-size: 1.6em;
     font-weight: 500;
-    opacity: 0;
-    animation: fade_in_anim 0.3s ease-in 0s 1 forwards;
-    animation-delay: var(--anim_delay_0);
 }
 
 #time{
-    font-size: 12rem;
+    text-align: center;
+    font-size: 10em;
     font-weight: 900;
     line-height: 0.9;
-    letter-spacing: 0.7rem;
-    opacity: 0;
-    animation: fade_in_anim 0.3s ease-in var(--anim_delay_1) 1 forwards;
-    animation-delay: var(--anim_delay_0);
+    letter-spacing: 0.5rem;
 }
 
 .first_message,.other_messages{
     font-family: "Poiret One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 2em;
+    font-size: 1.5rem;
     color: white;
     text-align: center;
     margin-top: 2rem;
@@ -356,41 +402,27 @@ button:active{
     height: 100dvh;
 }
 
-.quick_nav{
-    display: block;
-    width: 3rem;
-    height: 3rem;
-    cursor: pointer;
-    text-align: center;
-    background-color: white;
-    border-radius: 50%;
-    margin: 1rem;
+#quick_nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#quick_nav .link_icon{
     opacity: 0;
-    transition: width 0.2s ease-out, border-radius 0.2s ease-out;
     animation: fade_in_anim 0.3s ease-out 1 forwards, slide_left_anim 0.3s ease-out 1 forwards;
 }
 
-.slower-1{
+#quick_nav .slower-1{
     animation-delay: 1s;
 }
 
-.slower-2{
+#quick_nav .slower-2{
     animation-delay: 1.2s;
 }
 
-.slower-3{
+#quick_nav .slower-3{
     animation-delay: 1.4s;
-}
-
-.quick_nav img{
-    width: 1.5rem;
-    transform: translateY(50%);
-}
-
-.quick_nav:hover{
-    width: 3.7rem;
-    border-radius: 20%;
-    outline: 2px solid var(--accent1);
 }
 
 /* ---------------- LEFT SECTION ---------------- */
@@ -403,11 +435,16 @@ button:active{
     height: 100dvh;
 }
 
-#daily_task{
+.partition.left>div{
+    position: relative;
     margin-left: 1rem;
+}
+
+#daily_task{
+    position: relative;
+    z-index: 1;
     width: 4rem;
     height: 30rem;
-    
     transition: width var(--anim_delay_1) ease-out;
     opacity: 0;
     animation: fade_in_anim 0.3s ease-out 1 forwards, slide_right_anim 0.3s ease-out 1 forwards;
@@ -415,8 +452,8 @@ button:active{
 }
 
 #daily_task:hover{
-    width: 70%;
-    max-width: 22rem;
+    /* width: 100%; */
+    width: 22rem;
 }
 
 /*---------------------------------*/

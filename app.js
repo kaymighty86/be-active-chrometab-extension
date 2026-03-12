@@ -97,6 +97,13 @@ changeWallpaper();
 //SEARCH LOGIC --------------------
 function handleSearch(event){
     event.preventDefault();
+    formData = new FormData(event.target) //get form data
+
+    urlParams = new URLSearchParams()
+    urlParams.append("q", formData.get("search_text")) //Google uses query param key "q" as the key for the search text
+
+    searchURL = `https://www.google.com/search?${urlParams.toString()}` //the URLParams class will be used to convert the data to URL query param string.
+    location.href = searchURL; //replace current tab URL to search google
 }
 
 search_form.addEventListener("submit",handleSearch)
