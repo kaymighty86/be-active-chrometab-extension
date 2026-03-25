@@ -1,0 +1,31 @@
+Upgrades to the BeActive! Chrome Extension
+
+Searh bar
+----------------------
+- Increase the padding on the Google search input
+- Do code level input validation for blank entries for both the task input and google search input and all other inputs
+
+Task Mgr Section
+----------------------
+- Show character limit progress for the daily task input
+- Show task complete and delete button on hover
+- Show a default view to prompt the user to add tasks (both on the expanded tasks window and the collapsed one
+- (future update) Completed tasks appear last
+- (future update) When a tab loads, the task section opens up for a second then closes (when there are tasks to let the user know that there is still work left)
+
+General browser
+----------------------
+- Designing a theme for the extension and replacing the browser's theme
+- add Image attribution (to credit the source of the backgrounds)
+
+Quick Nav
+----------------------
+- Implement means to be able to configure the quick navigation shortcuts (first reaseach if its possible to get user's bookmarks)
+- implement quick nav scroll
+
+----------------------
+----------------------
+(pro version) 
+----------------------
+----------------------
+Being able to edit everything; background images, messages, apply themes
