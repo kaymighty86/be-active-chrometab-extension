@@ -1,5 +1,9 @@
 Upgrades to the BeActive! Chrome Extension
 
+Backgrounds
+----------------------
+- Use os path class to automatically fetch all paths from the wallpaper directory instead of using JSON
+
 Searh bar
 ----------------------
 - Increase the padding on the Google search input

@@ -77,7 +77,7 @@ async function changeWallpaper(){
     
     let curr_wp_id = parseInt(localStorage.getItem("current_wp")) || 0; //get current wallpaper ID from memory
 
-    setWallpaper(wp_list[curr_wp_id].url)
+    setWallpaper(`./assets/images/wallpapers/${wp_list[curr_wp_id]}`)
 
     curr_wp_id = curr_wp_id < wp_list.length - 1? curr_wp_id + 1 : 0; //set the next image ID
     localStorage.setItem("current_wp", curr_wp_id) //save next image id in memory
