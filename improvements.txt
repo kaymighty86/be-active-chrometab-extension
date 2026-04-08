@@ -11,6 +11,7 @@ Searh bar
 
 Task Mgr Section
 ----------------------
+- The character limit for tasks show not exceed two lines when rendered
 - Show character limit progress for the daily task input
 - Show task complete and delete button on hover
 - Show a default view to prompt the user to add tasks (both on the expanded tasks window and the collapsed one
@@ -26,6 +27,12 @@ Quick Nav
 ----------------------
 - Implement means to be able to configure the quick navigation shortcuts (first reaseach if its possible to get user's bookmarks)
 - implement quick nav scroll
+- Implement ChatGPT button and iFrame for loading the chatGPT website for quick chat with Chat GPT
+
+General
+----------------------
+- Optimise for mobile screens
+
 
 ----------------------
 ----------------------
