@@ -414,15 +414,15 @@ button:active{
 }
 
 #quick_nav .slower-1{
-    animation-delay: 1s;
+    animation-delay: 0.8s;
 }
 
 #quick_nav .slower-2{
-    animation-delay: 1.2s;
+    animation-delay: 1s;
 }
 
 #quick_nav .slower-3{
-    animation-delay: 1.4s;
+    animation-delay: 1.2s;
 }
 
 /* ---------------- LEFT SECTION ---------------- */
@@ -447,7 +447,7 @@ button:active{
     height: 30rem;
     transition: width var(--anim_delay_1) ease-out;
     opacity: 0;
-    animation: fade_in_anim 0.3s ease-out 1 forwards, slide_right_anim 0.3s ease-out 1 forwards;
+    animation: fade_in_anim 0.3s linear 1 forwards, slide_right_anim 0.3s ease-out 1 forwards;
     animation-delay: var(--anim_delay_3);
 }
 
